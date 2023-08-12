@@ -1,4 +1,4 @@
-﻿## Layered Starter Project Template for ASP.Net Core 7.0
+## Layered Starter Project Template for ASP.Net Core 7.0
 
 ## Contributing
 
@@ -11,4 +11,3 @@ This project is licensed under the [MIT License](LICENSE).
 ---
 
 Designed and maintained with ❤️ by [İlker Yolunda Gerek](https://github.com/ilkeryolundagerek).
-
