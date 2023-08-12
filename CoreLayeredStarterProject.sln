@@ -3,13 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmptyWebUI", "EmptyWebUI\EmptyWebUI.csproj", "{02983CCE-004A-4804-942D-EFEC9B42F9CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmptyWebUI", "EmptyWebUI\EmptyWebUI.csproj", "{02983CCE-004A-4804-942D-EFEC9B42F9CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{AEBD4EA5-F596-4929-BAB1-5FC3A19E2FA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{AEBD4EA5-F596-4929-BAB1-5FC3A19E2FA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{A78D8B95-98ED-4B8E-85B8-3C3715A6DA66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{A78D8B95-98ED-4B8E-85B8-3C3715A6DA66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{0F86A2CE-91E7-4AAE-B54B-CD68B5D50FE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Service\Service.csproj", "{0F86A2CE-91E7-4AAE-B54B-CD68B5D50FE1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{34ADB040-E5F3-449A-8A91-5DFC38918885}"
+	ProjectSection(SolutionItems) = preProject
+		ReadMe.md = ReadMe.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
