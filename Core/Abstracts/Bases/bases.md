@@ -1,0 +1,1 @@
+﻿### Basemodels for ViewModels, DTOs and Entities
