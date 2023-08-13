@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace Core.Abstracts.IUnitOfWorks
 {
-    public interface IUnitOfWorkProduction
+    public interface IUnitOfWorkProduction : IDisposable
     {
         IProductRepository ProductRepository { get; }
+        Task CommitAsync();
     }
 }

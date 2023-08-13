@@ -45,7 +45,7 @@ namespace Data.Repositories
             return await _set.AnyAsync(predicate);
         }
 
-        public async Task<IEnumerable<T>> FindManyAsync(Expression<Func<T, bool>>? predicate = null, Expression<Func<T, object>>[]? includes = null)
+        public async Task<IEnumerable<T>> FindManyAsync(Expression<Func<T, bool>>? predicate = null, string[]? includes = null)
         {
             IQueryable<T> values = predicate != null ? _set.Where(predicate) : _set;
             if (includes != null)
@@ -55,7 +55,7 @@ namespace Data.Repositories
                     values = values.Include(include);
                 }
             }
-            return await values.ToListAsync();
+            return await Task.Run(() => values);
         }
 
         public async Task<T?> FindOneAsync(object entityKey)

@@ -1,5 +1,6 @@
 ﻿using Core.Abstracts.IRepositories;
 using Core.Concretes.Entities;
+using Data.Contexts;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace Data.Repositories
 {
     public class ProductRepository : GenericRepository<Product>, IProductRepository
     {
-        public ProductRepository(DbContext context) : base(context)
+        public ProductRepository(Aw14Context context) : base(context)
         {
         }
     }

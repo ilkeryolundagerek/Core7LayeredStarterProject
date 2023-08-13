@@ -48,15 +48,19 @@ namespace Service.Services
 
         public async Task<IEnumerable<ProductListItemDTO>> GetProductsAsync(Expression<Func<ProductDetailDTO, bool>>? expression = null)
         {
-            var includes = new Expression<Func<Product, object>>[]
+            var includes = new string[]
             {
-                x=>x.SizeUnitMeasureCodeNavigation,
-                x=>x.WeightUnitMeasureCodeNavigation,
-                x=>x.ProductModel,
-                x=>x.ProductSubcategory
+                "SizeUnitMeasureCodeNavigation",
+                "WeightUnitMeasureCodeNavigation",
+                "ProductModel",
+                "ProductSubcategory.ProductCategory"
             };
             var values = await unitOfWorkProduction.ProductRepository.FindManyAsync(includes: includes);
             return from product in values
+                   let size = product.SizeUnitMeasureCodeNavigation
+                   let weight = product.WeightUnitMeasureCodeNavigation
+                   let model = product.ProductModel
+                   let subCategory = product.ProductSubcategory
                    select new ProductListItemDTO
                    {
                        ProductId = product.ProductId,
@@ -67,11 +71,11 @@ namespace Service.Services
                        Size = product.Size,
                        Weight = product.Weight,
                        Style = product.Style,
-                       SizeUnitMeasure = product.SizeUnitMeasureCodeNavigation?.Name,
-                       WeightUnitMeasure = product.WeightUnitMeasureCodeNavigation?.Name,
-                       ProductModel = product.ProductModel?.Name,
-                       ProductSubcategory = product.ProductSubcategory?.Name,
-                       ProductCategory = product.ProductSubcategory?.ProductCategory.Name,
+                       SizeUnitMeasure = size?.Name,
+                       WeightUnitMeasure = weight?.Name,
+                       ProductModel = model?.Name,
+                       ProductSubcategory = subCategory?.Name,
+                       ProductCategory = subCategory?.ProductCategory.Name,
                    };
         }
     }

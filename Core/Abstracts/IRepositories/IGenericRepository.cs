@@ -11,7 +11,7 @@ namespace Core.Abstracts.IRepositories
         Task<T?> FindOneAsync(object entityKey);
         Task<IEnumerable<T>> FindManyAsync(
             Expression<Func<T, bool>>? predicate = null, //Verileri filtrelemek için kullanılır.
-            Expression<Func<T, object>>[]? includes = null //Bağlı tabloları birleştirmek için kullanılır.
+           string[]? includes = null //Bağlı tabloları birleştirmek için kullanılır.
             );
 
         Task UpdateAsync(T entity);
